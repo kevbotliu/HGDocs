@@ -1,0 +1,71 @@
+<html>
+<head>
+	<link rel="stylesheet" href="stylesheets/home.css"/>
+	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+	<title></title>
+
+
+</head>
+<body>
+
+<header class="bg-image">
+	<div class="windowbar">
+		<span id='barLogIn' onclick="if($('#barLogIn').html()=='Log Out'){showLogin('logOut');}else{showLogin('login');}">Log In</span><span onclick="showLogin('signUp');">Sign Up</span><span>Account</span>
+		<div class="login" id = 'logIn' style="display:none";>
+			<div class="login-triangle"></div>
+
+			<h2 class="login-header">Log in</h2>
+
+			<div class="login-container" >
+				<p><input type="email" placeholder="Email" id="email"></p>
+				<p><input type="password" placeholder="Password" id ="password"></p>
+				<p><input type="submit" id = "submitFields" value="Log in" onclick="accountQ();"></p>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<h1 style="color:#32353D">HGDocs</h1>
+		<h2 style="color:#32353D">A simple, collaborative note-taking app </h2>
+		<a href="#" class="btn btn-transparent" id = "newDoc" onclick = "localStorage.setItem('newGame', 'true');location.href='createDoc';">New Doc</a>
+
+		<div id = "editDoc">
+			<a href="#" class="btn btn-transparent" id = "editDoc2" onclick = "">Edit Doc</a>
+
+			<input type="text" id="roomId" placeholder = "Document Id" style="display:none;">
+
+		</div>
+	</div>
+</header>
+
+<section class="">
+	<div class="container">
+		<div class="col-3 text--center">
+			<img src="https://lh4.ggpht.com/-wROmWQVYTcjs3G6H0lYkBK2nPGYsY75Ik2IXTmOO2Oo0SMgbDtnF0eqz-BRR1hRQg=w300" alt="" class="details-img--ball"/>
+		</div>
+		<div class="col-7 details">
+			<h3>Made in Chappaqua</h3>
+			<p>HGDocs is a fast, responsive, and flexible collaborative document design editor. You and any other user can simultaneously edit, design and manipulate shared pages. With HGDocs, you'll be more productive than ever.</p>
+		</div>
+	</div>
+</section>
+
+
+<footer>
+	<div class="container">
+		<ul>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contact Us</a></li>
+			<li><a href="#">Home</a></li>
+		</ul>
+		<p>&copy; 2016 David Solodukhin</p>
+	</div>
+</footer>
+
+
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script src="landing.js"></script>
+</body>
+</html>

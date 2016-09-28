@@ -1,0 +1,449 @@
+@import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+body {
+    margin: 0;
+    padding: 0;
+    background: #32353D;
+    font-family: 'Varela Round', 'Ionicons', sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+}
+::selection { background: rgba(95,191,249,.4); }
+.windowbar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 30px;
+    width: 100%;
+    background: #32353D;
+    color: rgba(255,255,255,.6);
+    line-height: 28px;
+    z-index: 100;
+}
+.windowbar span {
+    padding: 2px 10px;
+    margin: 0px 2px;
+    font-size: 13px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.windowbar span:hover {
+    background: rgba(0,0,0,.2);
+}
+.windowbar span:active {
+    background: rgba(0,0,0,.3);
+    color: rgba(255,255,255,.8);
+}
+
+.windowbar button {
+    padding: 2px 10px;
+    margin: 0px 2px;
+    font-size: 13px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.windowbar button:hover {
+    background: rgba(0,0,0,.2);
+}
+.windowbar button:active {
+    background: rgba(0,0,0,.3);
+    color: rgba(255,255,255,.8);
+}
+
+
+.windowbar .controls {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 30px;
+    width: 90px;
+}
+.windowbar .controls span, .windowbar .controls a {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+}
+.windowbar .controls span i, .windowbar .controls a i {
+    color: #fff;
+}
+.windowbar .controls span:hover {
+    background: rgba(0,0,0,.2);
+}
+.windowbar .controls .min {right: 60px;}
+.windowbar .controls .max {right: 30px;}
+.windowbar .controls .close {right: 0px;background:#E87460;}
+.windowbar .controls .close:active {opacity: .9;}
+
+.menu {
+    position: fixed;
+    top: 30px;
+    left: 0px;
+    width: 300px;
+    height: calc( 100% - 32px );
+    height: -webkit-calc( 100% - 32px );
+    padding-top: 2px;
+    background: #32353D;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,.05), inset 0 1px 0 rgba(0,0,0,.4);
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+}
+.menu span {
+    display: block;
+    padding: 7px 10px 7px 22px;
+    color: #fafafa;
+    font-size: 15px;
+    box-shadow: inset 0 -1px 0 rgba(255,255,255,.05), inset 0 -2px 0 rgba(0,0,0,.1);
+}
+.menu test {
+    display: block;
+    padding: 10px 10px 10px 40px;
+    text-decoration: none;
+    color: rgba(255,255,255,.5);
+    box-shadow: inset 0 -1px 0 rgba(255,255,255,.05), inset 0 -2px 0 rgba(0,0,0,.1);
+    transition: all .08s ease;
+    -webkit-transition: all .08s ease;
+    cursor: pointer;
+}
+.menu test:hover {
+    opacity:0.5;
+    color: rgba(255,255,255,.7);
+    background: rgba(0,0,0,.08);
+}
+.menu test b {
+    font-weight: normal;
+    color: rgba(100,104,106,1);
+}
+.menu test.current {
+    background: rgba(0,0,0,.08);
+    color: rgba(255,255,255,.9);
+}
+
+
+.menu test::after {
+    /* content: "X";*/
+    z-index: -100;
+    position: absolute;
+    right: 15px;
+    font-size: 28px;
+    line-height: 23px;
+    color: rgba(255,255,255,.3);
+    text-shadow: 2px 2px 0 rgba(0,0,0,.3);
+    opacity: 0;
+}
+.menu test:hover::after {
+    opacity: 1;
+}
+
+
+
+
+
+.tools{
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    background: none;
+    border: none;
+    box-sizing: border-box;
+    padding: 0;
+    font-size: 20px;
+    color: #a6a6a6;
+    cursor: pointer;
+    outline: none;
+}
+.minus{
+
+    position:absolute;
+    z-index:100; /*related to :after content */
+    left: 270px;
+    border-radius: 3px;
+    background: none;
+    border: none;
+    box-sizing: border-box;
+    padding: 0;
+    font-size: 20px;
+    color: #a6a6a6;
+    cursor: pointer;
+    outline: none;
+
+}
+.button:hover:not(:disabled) {
+    border: 1px solid #c6c6c6;
+}
+.button.primary {
+    color: #fff;
+    border: 1px solid #3079ed;
+    background: -webkit-linear-gradient(top, #4d90fe, #4787ed);
+    background: linear-gradient(top, #4d90fe, #4787ed);
+}
+
+#bold,
+#italic,
+#underline {
+    font-size: 18px;
+}
+
+#underline,
+#align-right {
+    margin-right: 17px;
+}
+
+#align-left {
+    margin-left: 17px;
+}
+
+select {
+
+    font-size: 15px;
+    font-weight: bold;
+    color: #444;
+    background: #fcfcfc;
+    border: 1px solid #a6a6a6;
+    border-radius: 3px;
+    margin: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+
+select > option {
+    font-size: 15px;
+    background: #fafafa;
+}
+
+#fonts {
+    width: 140px;
+}
+
+
+
+
+
+.pagev2 {
+    position: absolute;
+    height: calc( 100% - 70px );
+    height: -webkit-calc( 100% - 70px );
+    width: calc( 100% - 340px );
+    width: -webkit-calc( 100% - 340px );
+    top: 30px;
+    left: 300px;
+    padding: 20px 0px 20px 40px;
+    background: #fafafa;
+    color: #A0A0A0;
+    text-shadow: 2px 2px 0 rgba(0,0,0,.01);
+    box-shadow: inset 37px 0 0 rgba(0,0,0,.06);
+    resize: vertical;
+    outline: none;
+    overflow: auto;
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+}
+.drawing{
+
+    position: absolute;
+    top: 0px
+    left: 0px;
+    overflow: auto;*/
+
+}
+.page{
+
+    background: #fafafa;
+    color: #A0A0A0;
+    resize: vertical;
+    outline: none;
+    overflow: auto;
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+}
+.annotate{
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none
+}
+::-webkit-scrollbar {
+    min-width: 20px;
+    width: 20px;
+    max-width: 20px;
+    min-height: 20px;
+    height: 20px;
+    max-height: 20px;
+    background-color: #fafafa;
+}
+::-webkit-scrollbar-thumb {
+    background: #cacaca;
+    border: solid 7px #fafafa;
+    border-radius: 100px;
+    backface-visibility: hidden;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #bababa;
+}
+::-webkit-scrollbar-thumb:active {
+    background: #acacac;
+}
+::-webkit-scrollbar-button {
+    display: none;
+    height: 0px;
+}
+::-webkit-resizer, ::-webkit-scrollbar-corner {
+    background: #fafafa;
+}
+
+
+
+
+
+
+
+/*.list-count {
+    float:left;
+    text-align:center;
+    width:30%;
+    padding:0.5em;
+    color:#ddd;
+}
+*/
+.list-wrap li {
+    transition-property: margin, background-color, border-color;
+    transition-duration: .4s, .2s, .2s;
+    transition-timing-function: ease-in-out, ease, ease;
+}
+.list-wrap ul {
+    float:right;
+    width:100%;
+    margin:2em 0;
+    padding:0;
+    position:relative;
+}
+
+.list-wrap ul:before {
+
+    position:absolute;
+    left:2.8em;
+    font-size:3em;
+    text-align:right;
+    top:1.5em;
+    color:lightblue;
+    font-weight:bold;
+    transform:rotate(90deg);
+}
+
+.list-wrap li {
+
+    clear:left;
+    width:100%;
+    margin:0.2em 0;
+    padding:0.5em 0.8em;
+    list-style:none;
+    background-color:#f2f2f2;
+    border-left:5px solid #003842;
+    cursor:pointer;
+    color:#333;
+    position:relative;
+    z-index:2;
+}
+
+li:hover {
+    background-color:#f9f9f9;
+    border-color:lightblue;
+}
+.list-wrap {
+
+
+
+
+    /*position: absolute;
+    top: 500px;
+    /*left: 60px;*/
+
+}
+
+.login {
+    width: 400px;
+    margin: 16px auto;
+    font-size: 16px;
+}
+.login-header,
+.login p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* The triangle form is achieved by a CSS hack */
+.login-triangle {
+    width: 0;
+    margin-right: auto;
+    margin-left: auto;
+    border: 12px solid transparent;
+    border-bottom-color: #28d;
+}
+
+.login-header {
+    background: #28d;
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
+.login-container {
+    background: #ebebeb;
+    padding: 12px;
+}
+
+/* Every row inside .login-container is defined with p tags */
+.login p {
+    padding: 12px;
+}
+
+.login input{
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 16px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+}
+.login input[type="email"],
+.login input[type="password"] {
+    background: #fff;
+    border-color: #bbb;
+    color: #555;
+}
+
+/* Text fields' focus effect */
+.login input[type="email"]:focus,
+.login input[type="password"]:focus {
+    border-color: #888;
+}
+
+.login input[type="submit"] {
+    background: #28d;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+
+.login input[type="submit"]:hover {
+    background: #17c;
+}
+
+/* Buttons' focus effect */
+.login input[type="submit"]:focus {
+    border-color: #05a;
+}

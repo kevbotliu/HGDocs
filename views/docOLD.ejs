@@ -1,0 +1,82 @@
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="stylesheets/doc.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+
+
+<div class="wrapper">
+    <div class="pages">
+
+        <div class="toolbar">
+            <button id="bold" title="Bold (Ctrl+B)"><i class="fa fa-bold"></i></button>
+            <button id="italic" title="Italic (Ctrl+I)"><i class="fa fa-italic"></i></button>
+            <button id="underline" title="Underline (Ctrl+U)"><i class="fa fa-underline"></i></button>
+            <select name="fonts" id="fonts">
+                <option value="Arial" selected>Arial</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Tahoma">Tahoma</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Impact">Impact</option>
+                <option value="Courier New">Courier New</option>
+            </select>
+            <select name="size" id="size">
+                <option value="8">8</option>
+                <option value="10">10</option>
+                <option value="12">12</option>
+                <option value="14">14</option>
+                <option value="16" selected>16</option>
+                <option value="18">18</option>
+                <option value="20">20</option>
+                <option value="22">22</option>
+                <option value="24">24</option>
+                <option value="26">26</option>
+            </select>
+
+            <button id="align-left" title="Left"><i class="fa fa-align-left"></i></button>
+            <button id="align-center" title="Center"><i class="fa fa-align-center"></i></button>
+            <button id="align-right" title="Right"><i class="fa fa-align-right"></i></button>
+            <button id="list-ul" title="Unordered List"><i class="fa fa-list-ul"></i></button>
+            <button id="list-ol" title="Ordered List"><i class="fa fa-list-ol"></i></button>
+            <button id="drawOn" title="tester"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+        </div>
+        <canvas id="draw" width="700" height="1000" style="border:1px solid #000000;position: absolute;display:none;z-index:1;">Canvas Error</canvas>
+        <div class="page" contenteditable="true" id="main">
+            <h1>TITLE</h1>
+
+            <p>TextBody</p>
+
+        </div>
+
+    </div>
+
+</div>
+<section class="list-wrap">
+    <ul id="list">
+    </ul>
+</section>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script src="http://underscorejs.org/underscore-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/randomcolor/0.1.1/randomColor.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rangy/1.3.0/rangy-core.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rangy/1.3.0/rangy-classapplier.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rangy/1.3.0/rangy-textrange.js"></script>
+<script src="format.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Caret.js/0.3.1/jquery.caret.js"></script>
+<script src="doc.js"></script>
+<script src="draw.js"></script>
+
+
+
+
+
+<span id="val" style="display:none;"><%= val %></span>
+</body>
+</html>

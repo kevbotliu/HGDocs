@@ -1,0 +1,127 @@
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="stylesheets/doc.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+
+
+<div class="wrapper">
+    <div class="pages">
+
+        <div class="windowbar">
+            <!--<span onclick="accountQ(this);">Account</span>-->
+            <span>Prefs</span><span id='barLogIn' onclick="if($('#barLogIn').html()=='Log Out'){showLogin('logOut');}else{showLogin('login');}">Log In</span><span id="barSignUp" onclick="showLogin('signUp');">Sign Up</span>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            <button id="bold" title="Bold (Ctrl+B)" class ="tools"><i class="fa fa-bold"></i></button>
+            <button id="italic" title="Italic (Ctrl+I)" class ="tools"><i class="fa fa-italic"></i></button>
+            <button id="underline" title="Underline (Ctrl+U)" class ="tools"><i class="fa fa-underline"></i></button>
+            <select name="fonts" id="fonts">
+                <option value="Arial" selected>Arial</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Tahoma">Tahoma</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Impact">Impact</option>
+                <option value="Courier New">Courier New</option>
+            </select>
+            <select name="size" id="size">
+                <option value="8">8</option>
+                <option value="10">10</option>
+                <option value="12">12</option>
+                <option value="14">14</option>
+                <option value="16" selected>16</option>
+                <option value="18">18</option>
+                <option value="20">20</option>
+                <option value="22">22</option>
+                <option value="24">24</option>
+                <option value="26">26</option>
+            </select>
+            <!--<button id="colorPicker" title="" class ="tools"><i class="fa fa-circle"></i></button>-->
+
+                <input type="color" name="favcolor" value="#ffffff" onchange="changeColor(this.value,'back');" style="padding: 0;border: none;background: none;">
+                <input type="color" name="favcolor2" id="foreColor" value="black" onchange="changeColor(this.value,'fore');" style="padding: 0;border: none;background: none;">
+
+
+            <button id="align-left" title="Left" class ="tools"><i class="fa fa-align-left"></i></button>
+            <button id="align-center" title="Center" class ="tools"><i class="fa fa-align-center"></i></button>
+            <button id="align-right" title="Right" class ="tools"><i class="fa fa-align-right"></i></button>
+            <button id="list-ul" title="Unordered List" class ="tools"><i class="fa fa-list-ul"></i></button>
+            <button id="list-ol" title="Ordered List" class ="tools"><i class="fa fa-list-ol"></i></button>
+            <button id="drawOn" title="Draw" class ="tools"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+            <button id="erase"  title="Erase" class ="tools" style="display:none"><i class="fa fa-eraser" aria-hidden="true"></i></button>
+            <button id="switchLayer" title="Ordered List" style="display:none" class ="tools"><i class="fa fa-caret-square-o-down" aria-hidden="true"></i></button>
+
+            <span id="dispEmail" style="float:right"></span>
+            <div class="login" id = 'logIn' style="display:none">
+                <div class="login-triangle"></div>
+
+                <h2 class="login-header">Log in</h2>
+
+                <div class="login-container" >
+                    <p><input type="email" placeholder="Email" id="email"></p>
+                    <p><input type="password" placeholder="Password" id ="password"></p>
+                    <p><input type="submit" id = "submitFields" value="Log in" onclick="accountQ();"></p>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="menu">
+            <div id='files'>
+                <span>Files Associated with IP</span>
+            </div>
+
+            <span>Currently Editing:</span>
+            <section class="list-wrap">
+
+                <ul id="list">
+                </ul>
+            </section>
+        </div>
+
+
+
+
+
+    <div class = "pagev2">
+
+        <canvas id="draw" class = "drawing" style="border:1px solid #000000;position: absolute;display:none;z-index:1;">Canvas Error</canvas>
+        <div class="page" contenteditable="true" id="main">
+
+            <h1>TITLE</h1>
+
+            <p>TextBody</p>
+
+        </div>
+
+    </div>
+
+    </div>
+
+
+<!--</div> closing tag matches nothing?-->
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script src="http://underscorejs.org/underscore-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/randomcolor/0.1.1/randomColor.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rangy/1.3.0/rangy-core.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rangy/1.3.0/rangy-classapplier.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rangy/1.3.0/rangy-textrange.js"></script>
+<script src="format.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Caret.js/0.3.1/jquery.caret.js"></script>
+<script src="doc.js"></script>
+<script src="draw.js"></script>
+
+
+
+
+
+<span id="val" style="display:none;"><%= val %></span>
+</body>
+</html>
