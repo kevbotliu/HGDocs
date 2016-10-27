@@ -36,7 +36,9 @@ function getCookie(cname) {
  });*/
 $("#editDoc2").click(function(e){
     e.preventDefault();
-    if(!$('#roomId').is(":visible")){$('#roomId').fadeIn();$("#roomId").focus();}
+    if(!$('#roomId').is(":visible")){
+        $('#roomId').fadeIn();$("#roomId").focus();
+    }
     else{
         localStorage.setItem('newGame', document.getElementById('roomId').value);location.href=document.getElementById('roomId').value;
     }
